@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Manage Users</title>
+    <title>Forum</title>
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" type="text/css"/>
 
 </head>
@@ -29,13 +29,8 @@
             <tbody>
             <th:block th:each="user: ${listUsers}">
                 <tr>
-                    <td>[[${user.id}]]</td>
-
-                    <td>[[${user.firstName}]]</td>
 
                     <td>[[${user.studentID}]]</td>
-
-
 
                     <td>
                         <a class="h4 mr-3" th:href="@{'/users/edit/'+ ${user.id}}">Edit</a>
