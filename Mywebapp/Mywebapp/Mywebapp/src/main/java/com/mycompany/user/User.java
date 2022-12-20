@@ -15,6 +15,9 @@ public class User {
     @Column(length = 45, nullable = false, name = "studentID")
     private String studentID;
 
+    @Column(length = 1000, nullable = false, name = "post")
+    private String post;
+
     @Column(length = 45, nullable = false, name = "majorIn")
     private String majorIn;
     public Integer getId() {
@@ -41,6 +44,10 @@ public class User {
     public void setMajorIn(String majorIn) {
         this.majorIn = majorIn;
     }
+    public String getPost(){return post;}
+    public void setPost(String post) {
+        this.post = post;
+    }
 
 
     @Override
@@ -48,7 +55,7 @@ public class User {
         return "User{" +
                 "id=" + getId() +
 
-                ", firstName='" + getPassword() + '\'' +
+                ", password='" + getPassword() + '\'' +
                 '}';
                 /*", studentID='" + getStudentID() + '\'' +
                 '}';*/
