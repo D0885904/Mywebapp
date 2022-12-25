@@ -10,13 +10,13 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(length = 45, nullable = false, name = "firstName")
+    @Column(length = 10, nullable = false, name = "firstName")
     private String firstName;
 
-    @Column(length = 45, nullable = false, name = "class")
+    @Column(length = 20, nullable = false, name = "class")
     private String class_s;
 
-    @Column(length = 45, nullable = false, name = "studentID")
+    @Column(length = 1000, nullable = false, name = "studentID")
     private String studentID;
 
 
