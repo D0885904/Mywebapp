@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -17,7 +16,7 @@ import java.util.List;
 public class UserController {
     @Autowired
     private UserService service;
-    private UserPost userPost;
+
     @GetMapping("/users")
     public String showUserList(Model model) {
         List<User> listUsers = service.listAll();
@@ -38,9 +37,11 @@ public class UserController {
         ra.addFlashAttribute("message", "The user has been saved successfully.");
         return "redirect:/users";
     }
+
     /**
      * Immplementation of updated and delete
      */
+
     @GetMapping("/users/edit/{id}")
     public String showEditForm(@PathVariable("id") Integer id, Model model, RedirectAttributes ra) {
         try {
@@ -64,24 +65,8 @@ public class UserController {
             ra.addFlashAttribute("message", e.getMessage());
         }
         return "redirect:/users";
+
     }
 
-    @GetMapping("/users/check")
-    public String Usercheck(String studentID, String password, HttpSession session){
-        try{
-            System.out.println(studentID + password);
-            List<User> user_info = service.listAll();
-            for(int i  = 0; i < user_info.size(); i++){
-                if(user_info.get(i).getStudentID().equals(studentID) && user_info.get(i).getPassword().equals(password)){
-                    System.out.println("User: " + user_info.get(i).getStudentID() + "Login Successfully!");
-                    session.setAttribute("UserSession", user_info.get(i));
-                    return "redirect:/" + user_info.get(i).getId();
-                }
-            }
-        }catch (Exception e){
-            System.out.println("User not found");
-        }
-        return "redirect:/user/login";
-    }
 
 }

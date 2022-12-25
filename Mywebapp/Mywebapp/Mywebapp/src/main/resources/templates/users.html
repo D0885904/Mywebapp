@@ -2,24 +2,28 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Forum</title>
+    <title>匿名八掛論壇</title>
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" type="text/css"/>
 
 </head>
 <body style="background-color:#DDDDFF;">
 <div class="container-fluid text-center">
-    <h1>程式設計交流論壇</h1>
+    <h2>匿名八掛論壇</h2>
     <div class="m-2">
-        <a class="h3" th:href="@{/users/new}">登入</a>
+        <a class="h3" th:href="@{/users/new}">我要發文</a>
     </div>
 
     <div class="alert-success text-center" th:if="${message}"></div>
 
     <div>
-        <table class="table table-bordered">
+        <table style="border:3px" #FFAC55 solid; class="table table-bordered">
             <thead class="thead-dark">
             <tr>
-                <th>學號</th>
+                <th>編號</th>
+
+                <th>暱稱</th>
+
+                <th>標題</th>
 
                 <th>內文</th>
 
@@ -29,12 +33,17 @@
             <tbody>
             <th:block th:each="user: ${listUsers}">
                 <tr>
+                    <td>[[${user.id}]]</td>
+
+                    <td>[[${user.firstName}]]</td>
+
+                    <td>[[${user.class_s}]]</td>
 
                     <td>[[${user.studentID}]]</td>
 
                     <td>
-                        <a class="h4 mr-3" th:href="@{'/users/edit/'+ ${user.id}}">Edit</a>
-                        <a class="h4" th:href="@{'/users/delete/'+ ${user.id}}">Delete</a>
+                        <a class="h4 mr-3" th:href="@{'/users/edit/'+ ${user.id}}">編輯</a>
+                        <a class="h4" th:href="@{'/users/delete/'+ ${user.id}}">刪除</a>
                     </td>
                 </tr>
             </th:block>

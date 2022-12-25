@@ -9,58 +9,63 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(length = 45, nullable = false, name = "password")
-    private String password;
+
+    @Column(length = 45, nullable = false, name = "firstName")
+    private String firstName;
+
+    @Column(length = 45, nullable = false, name = "class")
+    private String class_s;
 
     @Column(length = 45, nullable = false, name = "studentID")
     private String studentID;
 
-    @Column(length = 1000, nullable = false, name = "post")
-    private String post;
 
-    @Column(length = 45, nullable = false, name = "majorIn")
-    //private String majorIn;
     public Integer getId() {
         return id;
     }
+
     public void setId(Integer id) {
         this.id = id;
     }
-    public String getPassword() {
-        return password;
+
+    public String getFirstName() {
+        return firstName;
     }
-    public void setPassword(String firstName) {
-        this.password = password;
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
-    public String getStudentID() {
-        return studentID;
+
+
+
+
+    public String getClass_s() {
+        return class_s;
     }
+
+    public void setClass_s(String class_s) {
+        this.class_s = class_s;
+    }
+
+
+
+    public String getStudentID() {return studentID; }
+
     public void setStudentID(String studentID) {
         this.studentID = studentID;
     }
-    /*public String getMajorIn() {
-        return majorIn;
-    }
-    public void setMajorIn(String majorIn) {
-        this.majorIn = majorIn;
-    }*/
-    public String getPost(){return post;}
-    public void setPost(String post) {
-        this.post = post;
-    }
-
 
     @Override
     public String toString() {
         return "User{" +
                 "id=" + getId() +
 
-                ", password='" + getPassword() + '\'' +
+                ", firstName='" + getFirstName() + '\'' +
+
+                ", class='" + getClass_s() + '\'' +
+
+                ", StudentID='" + getStudentID() + '\'' +
                 '}';
-                /*", studentID='" + getStudentID() + '\'' +
-                '}';*/
-
-
     }
 
 }
