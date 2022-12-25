@@ -19,7 +19,7 @@ public class User {
     private String post;
 
     @Column(length = 45, nullable = false, name = "majorIn")
-    private String majorIn;
+    //private String majorIn;
     public Integer getId() {
         return id;
     }
@@ -38,12 +38,12 @@ public class User {
     public void setStudentID(String studentID) {
         this.studentID = studentID;
     }
-    public String getMajorIn() {
+    /*public String getMajorIn() {
         return majorIn;
     }
     public void setMajorIn(String majorIn) {
         this.majorIn = majorIn;
-    }
+    }*/
     public String getPost(){return post;}
     public void setPost(String post) {
         this.post = post;

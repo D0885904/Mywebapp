@@ -66,22 +66,22 @@ public class UserController {
         return "redirect:/users";
     }
 
-    /*@GetMapping("/users/check")
-    public String Usercheck(String user_email, String user_password, HttpSession session){
+    @GetMapping("/users/check")
+    public String Usercheck(String studentID, String password, HttpSession session){
         try{
-            System.out.println(user_email + user_password);
+            System.out.println(studentID + password);
             List<User> user_info = service.listAll();
             for(int i  = 0; i < user_info.size(); i++){
-                if(user_info.get(i).getUser_email().equal(user_email).&& user_info.get(i).getUser_password().equals(user_password)){
-                    System.out.println("User: " + user_info.get(i).getUser_email() + "Login Successfully!");
+                if(user_info.get(i).getStudentID().equals(studentID) && user_info.get(i).getPassword().equals(password)){
+                    System.out.println("User: " + user_info.get(i).getStudentID() + "Login Successfully!");
                     session.setAttribute("UserSession", user_info.get(i));
-                    return "redirect:/" + user_info.get(i).getID();
+                    return "redirect:/" + user_info.get(i).getId();
                 }
             }
         }catch (Exception e){
             System.out.println("User not found");
         }
         return "redirect:/user/login";
-    }*/
+    }
 
 }
