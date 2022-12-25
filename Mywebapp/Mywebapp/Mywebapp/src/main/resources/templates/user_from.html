@@ -17,17 +17,17 @@
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label">暱稱</label>
                 <div class="col-sm-8">
-                    <input type="text" th:field="*{firstName}" class="form-control" required minlength="1" maxlength="10"/>
+                    <input placeholder="請輸入暱稱(10字內)" type="text" th:field="*{firstName}" class="form-control" required minlength="1" maxlength="10"/>
                 </div>
 
                 <label class="col-sm-4 col-form-label">標題</label>
                 <div class="col-sm-8">
-                    <input type="text" th:field="*{class_s}" class="form-control" required minlength="2" maxlength="20"/>
+                    <input placeholder="請輸入標題(20字內)" type="text" th:field="*{class_s}" class="form-control" required minlength="2" maxlength="20"/>
                 </div>
 
                 <label class="col-sm-8 col-form-label">內文</label>
                 <div class="col-sm-8">
-                    <input type="text" style="width:465px; height:500px" th:field="*{studentID}" class="form-control" required minlength="2" maxlength="1000"/>
+                    <textarea style="width:465px; height:500px" placeholder="請輸入內容(1000字内)" type="text" th:field="*{studentID}" class="form-control" required minlength="2" maxlength="1000"/>
                 </div>
             </div>
 
